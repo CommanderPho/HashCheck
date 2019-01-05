@@ -20,7 +20,7 @@ if not os.path.isdir(test_vectors_dir):
 
 # Download and unzip the two NIST test vector "response" files
 
-for sha_url in ('http://csrc.nist.gov/groups/STM/cavp/documents/shs/shabytetestvectors.zip',
+for sha_url in ('https://github.com/coruus/nist-testvectors/raw/master/csrc.nist.gov/groups/STM/cavp/documents/shs/shabytetestvectors.zip',
                 'http://csrc.nist.gov/groups/STM/cavp/documents/sha3/sha-3bytetestvectors.zip'):
     print('downloading and extracting', sha_url)
     with urllib.request.urlopen(sha_url) as sha_downloading:              # open connection to the download url;
