@@ -102,19 +102,27 @@
       <WarningLevel>Level3</WarningLevel>
       <SDLCheck>true</SDLCheck>
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <AdditionalIncludeDirectories>C:\Users\Pho\Source\Repos\HashCheck;C:\Users\Pho\Source\Repos\HashCheck\libs;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <ResourceCompile>
       <PreprocessorDefinitions>WIN32;__i386__;NDEBUG;_WINDOWS;_UNICODE;UNICODE;BYTE_ORDER=LITTLE_ENDIAN;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <Culture>0x0409</Culture>
     </ResourceCompile>
     <Link>
-      <AdditionalDependencies>shlwapi.lib;comctl32.lib;uxtheme.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>shlwapi.lib;comctl32.lib;uxtheme.lib;"C:\Users\Pho\Source\Repos\HashCheck\installer\Deploy\HashCheck.lib";%(AdditionalDependencies)</AdditionalDependencies>
       <ModuleDefinitionFile>HashCheck.def</ModuleDefinitionFile>
       <OptimizeReferences>true</OptimizeReferences>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <SetChecksum>true</SetChecksum>
       <SubSystem>Windows</SubSystem>
+      <AdditionalLibraryDirectories>C:\Users\Pho\Source\Repos\HashCheck\installer\Deploy;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
+    <PostBuildEvent>
+      <Command>xcopy /y "$(ProjectDir)$(OutDir)$(TargetName)$(TargetExt)" "$(ProjectDir)installer\Deploy\"
+xcopy /y "$(ProjectDir)$(OutDir)$(TargetName).lib" "$(ProjectDir)installer\Deploy\"
+xcopy /y "$(ProjectDir)$(OutDir)$(TargetName).pdb" "$(ProjectDir)installer\Deploy\"</Command>
+      <Message>Copies built DLL to deploy directory</Message>
+    </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
@@ -126,19 +134,27 @@
       <WarningLevel>Level3</WarningLevel>
       <SDLCheck>true</SDLCheck>
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <AdditionalIncludeDirectories>C:\Users\Pho\Source\Repos\HashCheck;C:\Users\Pho\Source\Repos\HashCheck\libs;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <ResourceCompile>
       <PreprocessorDefinitions>WIN64;__amd64__;NDEBUG;_WINDOWS;_UNICODE;UNICODE;BYTE_ORDER=LITTLE_ENDIAN;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <Culture>0x0409</Culture>
     </ResourceCompile>
     <Link>
-      <AdditionalDependencies>shlwapi.lib;comctl32.lib;uxtheme.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>shlwapi.lib;comctl32.lib;uxtheme.lib;"C:\Users\Pho\Source\Repos\HashCheck\installer\Deploy\HashCheck.lib";%(AdditionalDependencies)</AdditionalDependencies>
       <ModuleDefinitionFile>HashCheck.def</ModuleDefinitionFile>
       <OptimizeReferences>true</OptimizeReferences>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <SetChecksum>true</SetChecksum>
       <SubSystem>Windows</SubSystem>
+      <AdditionalLibraryDirectories>C:\Users\Pho\Source\Repos\HashCheck\installer\Deploy;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
+    <PostBuildEvent>
+      <Command>xcopy /y "$(ProjectDir)$(OutDir)$(TargetName)$(TargetExt)" "$(ProjectDir)installer\Deploy\"
+xcopy /y "$(ProjectDir)$(OutDir)$(TargetName).lib" "$(ProjectDir)installer\Deploy\"
+xcopy /y "$(ProjectDir)$(OutDir)$(TargetName).pdb" "$(ProjectDir)installer\Deploy\"</Command>
+      <Message>Copies built DLL to deploy directory</Message>
+    </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -147,17 +163,26 @@
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
       <WarningLevel>Level3</WarningLevel>
       <SDLCheck>true</SDLCheck>
+      <AdditionalIncludeDirectories>C:\Users\Pho\Source\Repos\HashCheck;C:\Users\Pho\Source\Repos\HashCheck\libs;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <ResourceCompile>
       <PreprocessorDefinitions>WIN32;__i386__;_DEBUG;_WINDOWS;_UNICODE;UNICODE;BYTE_ORDER=LITTLE_ENDIAN;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <Culture>0x0409</Culture>
     </ResourceCompile>
     <Link>
-      <AdditionalDependencies>shlwapi.lib;comctl32.lib;uxtheme.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>shlwapi.lib;comctl32.lib;uxtheme.lib;"C:\Users\Pho\Source\Repos\HashCheck\installer\Deploy\HashCheck.lib";%(AdditionalDependencies)</AdditionalDependencies>
       <ModuleDefinitionFile>HashCheck.def</ModuleDefinitionFile>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <SubSystem>Windows</SubSystem>
+      <AssemblyDebug>true</AssemblyDebug>
+      <AdditionalLibraryDirectories>C:\Users\Pho\Source\Repos\HashCheck\installer\Deploy;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
+    <PostBuildEvent>
+      <Command>xcopy /y "$(ProjectDir)$(OutDir)$(TargetName)$(TargetExt)" "$(ProjectDir)installer\Deploy\"
+xcopy /y "$(ProjectDir)$(OutDir)$(TargetName).lib" "$(ProjectDir)installer\Deploy\"
+xcopy /y "$(ProjectDir)$(OutDir)$(TargetName).pdb" "$(ProjectDir)installer\Deploy\"</Command>
+      <Message>Copies built DLL to deploy directory</Message>
+    </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
@@ -167,17 +192,26 @@
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
       <WarningLevel>Level3</WarningLevel>
       <SDLCheck>true</SDLCheck>
+      <AdditionalIncludeDirectories>C:\Users\Pho\Source\Repos\HashCheck;C:\Users\Pho\Source\Repos\HashCheck\libs;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <ResourceCompile>
       <PreprocessorDefinitions>WIN64;__amd64__;_DEBUG;_WINDOWS;_UNICODE;UNICODE;BYTE_ORDER=LITTLE_ENDIAN;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <Culture>0x0409</Culture>
     </ResourceCompile>
     <Link>
-      <AdditionalDependencies>shlwapi.lib;comctl32.lib;uxtheme.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>shlwapi.lib;comctl32.lib;uxtheme.lib;"C:\Users\Pho\Source\Repos\HashCheck\installer\Deploy\HashCheck.lib";%(AdditionalDependencies)</AdditionalDependencies>
       <ModuleDefinitionFile>HashCheck.def</ModuleDefinitionFile>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <SubSystem>Windows</SubSystem>
+      <AssemblyDebug>true</AssemblyDebug>
+      <AdditionalLibraryDirectories>C:\Users\Pho\Source\Repos\HashCheck\installer\Deploy;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
+    <PostBuildEvent>
+      <Command>xcopy /y "$(ProjectDir)$(OutDir)$(TargetName)$(TargetExt)" "$(ProjectDir)installer\Deploy\"
+xcopy /y "$(ProjectDir)$(OutDir)$(TargetName).lib" "$(ProjectDir)installer\Deploy\"
+xcopy /y "$(ProjectDir)$(OutDir)$(TargetName).pdb" "$(ProjectDir)installer\Deploy\"</Command>
+      <Message>Copies built DLL to deploy directory</Message>
+    </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="CHashCheck.cpp" />
