@@ -114,16 +114,19 @@ BOOL WINAPI HashCalcPrepare( PHASHCALCCONTEXT phcctx )
 		{
 			// Finally, we can do the actual work that's needed!
 
+			// Check if pszCurrent is a directory
 			if (GetFileAttributes(pszCurrent) & FILE_ATTRIBUTE_DIRECTORY)
 			{
 				if (cchCurrent < MAX_PATH_BUFFER - 2)
 				{
+					// Walk the directory recurrsively.
 					memcpy(phcctx->scratch.sz, pszCurrent, cbCurrent);
 					HashCalcWalkDirectory(phcctx, phcctx->scratch.sz, cchCurrent);
 				}
 			}
 			else
 			{
+				// Otherwise it's a file, not a directory and we just add the item to Hash.
 				PHASHCALCITEM pItem = SLAddItem(phcctx->hList, NULL, sizeof(HASHCALCITEM) + cbCurrent);
 
 				if (pItem)
